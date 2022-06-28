@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link src="styles.css">
+</head>
+
+<body>
+	
+	var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+<!-- Dataset Practice -->
+
+<div id="myDiv" data-name="Becky" data-started-coding-at="27">
+
+</div>
+
+<script>
+  const myDiv = document.getElementById("myDiv");
+  console.log(myDiv)
+</script>
+
+    <div id="demo"></div>
+
+    <main></main>
+
+    <p id="demo2"></p>
+
+    <p id="demo3"></p>
+    
+
+    <button onclick="myFunction()">Try it</button>
+    
+
+<p id="demo4"></p>
+
+<p id="demo5"></p>
+
+<p id="demo6"></p>
+
+<p id="demo7"></p>
+    
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo8"></p>
+
+
+<h2>JavaScript Objects</h2>
+
+<p id="demo9"></p>
+
+
+
+
+<p id="demo12"></p>
+
+
+<p>Click the button to print the current page.</p>
+
+<button onclick="window.print()">Print this page</button>
+
+
+<script>
+const d = new Date();
+document.getElementById("demo12").innerHTML = d.getFullYear();
+</script>
+
+
+
+EVENTS
+
+<p id="demo10"></p>
+<button onclick="document.getElementById('demo10').innerHTML=Date()">The time is?</button>
+
+
+EVENTS with FUNCTIONS
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo11").innerHTML = Date();
+}
+</script>
+
+<p id="demo11"></p>
+
+
+
+
+
+<!-- OBJECTS -->
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Display some data from the object:
+document.getElementById("demo9").innerHTML = person.firstName + " is " + person.age + " years old.";
+</script>
+
+
+
+
+
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+document.getElementById("demo8").innerHTML = "The car type is " + car.type;
+</script>
+
+
+
+
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+document.getElementById("demo7").innerHTML = "The temp is " + toCelsius(77) + " Celsius.";
+</script>
+
+
+
+
+
+<script>
+var x = myFunction(4, 3);
+document.getElementById("demo6").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+
+
+
+
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("demo5").innerHTML = myFunction(4, 3);
+</script>
+
+
+
+
+
+<script>
+  
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo4").innerHTML = fruits;
+
+function myFunction() {
+  fruits.sort();
+  document.getElementById("demo4").innerHTML = fruits;
+}
+</script>
+
+
+
+
+
+
+<script>
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo3").innerHTML = "Today is " + day;
+</script>
+
+
+
+<script>
+const hour = new Date().getHours(); 
+let greeting;
+
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+document.getElementById("demo2").innerHTML = greeting
+</script>
+
+
+    <script>
+        function sum(a, b) {
+        document.getElementById("demo").innerHTML = (a * b)
+        }
+        
+        sum(10, 27)
+
+        const divWithId = document.getElementById("demo")
+        divWithId.style.color = "orange"
+        
+    </script>
+   
+
+   <!-- javascript For Loop -->
+   <p id="demo13"></p>
+
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+
+document.getElementById("demo13").innerHTML = text;
+</script>
+
+
+
+
+
+<script>
+
+const person1 = {
+  name: 'Becky',
+  city: 'New York',
+  age: 53,
+  isStudent: true,
+  skills: ['Javascript', 'HTML', 'CSS']
+};
+person1.newage = 54;
+const message = `Hi, I'm ${person1.name} and I live in ${person1.city}. My age will be ${person1.age} this year! Shit! And David will be ${person1.newage} this year! I have ${person1.skills.length} skills in programming. They consist of ${person1.skills.join(', ')}.`;
+
+console.log(message);
+console.log(person1.age);
+document.querySelector('main').innerHTML = message;
+</script>  
+
+<script>
+  const person = {
+  name: 'Edward',
+  nickname: 'Duke',
+  city: 'New York',
+  age: 37,
+  isStudent: true,
+  skills: ['JavaScript', 'HTML', 'CSS']
+};
+
+for ( let key in person ) {
+  console.log(`${key}: ${person[key]}`);
+}
+
+const personProps = Object.keys(person);
+console.log(personProps);
+
+console.log( Object.keys(person).length );
+
+const personVals = Object.values(person); 
+console.log(personVals);
+</script>
+
+
+
+
+
+
+<script>
+// Quiz Build
+
+  // 1. Create an array to hold quiz questions and answers
+const questions = [
+  {question: 'How many planets are in the Solar System?', answer: '8'},
+  {question: 'How many continents are there?', answer: '7'},
+  {question: 'How many legs does an insect have?', answer: '6'},
+  {question: 'What year was JavaScript created?', answer: '1995'}
+];
+
+// 2. Store the number of questions answered correctly
+const correct = [];
+const incorrect = [];
+let correctAnswers = 0;
+
+/* 
+  3. Use a loop to cycle through each question
+      - Present each question to the user
+      - Compare the user's response to answer in the array
+      - If the response matches the answer, the number of correctly
+        answered questions increments by 1
+*/
+for ( let i = 0; i < questions.length; i++ ) {
+  let question = questions[i].question;
+  let answer = questions[i].answer;
+  let response = prompt(question);
+  
+  if ( response === answer ) {
+    correctAnswers++;
+    correct.push(question);
+  } else {
+    incorrect.push(question);
+  }
+}
+
+function createListItems(arr) {
+  let items = '';
+  for (let i = 0; i < arr.length; i++) {
+    items += `<li>${arr[i]}</li>`;
+  }
+  return items;
+}
+
+// 4. Display the number of correct answers to the user
+let html = `
+  <h1>You got ${correctAnswers} question(s) correct</h1>
+  <h2>You got these questions right:</h2>
+  <ol>${ createListItems(correct) }</ol>
+
+  <h2>You got these questions wrong:</h2>
+  <ol>${ createListItems(incorrect) }</ol>
+`;
+
+document.querySelector('main').innerHTML = html;
+
+</script>
+
+
+
+
+
+
+<script>
+
+  // for Loops with Array
+
+  const students = ['Becky', 'Devin', 'David'];
+      for (let i = 0; i < students.length; i++) {
+        console.log(students[i]);
+    }
+</script>
+
+
+
+
+
+
+<script>
+
+  // Passing a playlist with an Array to a UL list
+
+  const playlist = [
+  'So What',
+  'Respect',
+  'What a Wonderful World',
+  'At Last',
+  'Three Little Birds',
+  'The Way You Look Tonight'
+];
+
+// This creates the array from the const playlist
+function createListItems(arr) {
+  let items = '';
+  for ( let i = 0; i < arr.length; i++ ) {
+    items += `<li>${ arr[i] }</li>`;
+  }
+  
+  return items;
+  
+}
+
+document.querySelector('main').innerHTML = `<ol>${createListItems(playlist)} </ol>`;
+
+</script>
+
+
+
+<script>
+
+  const inStock = ['pizza', 'cookies', 'eggs', 'apples', 'milk', 'cheese', 'bread', 'lettuce', 'carrots', 'broccoli', 'potatoes', 'crackers', 'onions', 'tofu', 'limes', 'cucumbers'];
+
+const search = prompt('Search for a product.');
+
+let message;
+
+if (!search) {
+  message = `<strong>In Stock:</strong> ${inStock.join(', ')}`
+} else if (inStock.includes(search.toLowerCase())) {
+  message = `Yes, we have <strong>${search.toLowerCase()}</strong>. It's #${inStock.indexOf(search) 
++ 1} on the list!`;
+} else {
+  message = `Sorry, we do not have your <strong>${search}</strong> in stock!`;
+}
+
+document.querySelector('main').innerHTML = `<p>${message}</p>`;
+
+</script>
+
+<script>
+  const playlist = [
+  ['So what', 'Pink', '3:03'],
+  ['Respect', 'Aretha Franklin', '2:03'],
+  ['What a Wonderful World', 'Louis Armstrong', '2:21'],
+  ['At Last', 'Ella Fitzgerald', '4:18'],
+  ['Three Little Birds', 'Bob Marley and the Wailers', '3:01'],
+  ['The Way You Look Tonight', 'Frank Sinatra', '3:21']
+];
+  
+// This was a test to try the multidimensional array
+ // const myArtists = `${playlist[0][1]}, ${playlist[1][1]}, ${playlist[2][1]}`;
+ // console.log(myArtists);
+
+function createListItems( arr ) {
+  
+  let items = '';
+
+  for ( let i = 0; i < arr.length; i++ ) {
+    items += `<li>${ arr[i][0] }, by ${ arr[i][1]} - ${ arr[i][2]} </li>`;
+  }
+  return items;
+}
+
+document.querySelector('main').innerHTML = `
+  <ol>
+    ${createListItems(playlist)}
+  </ol>
+`;
+</script>
+
+
+
+
+<script>
+
+  // Another Quiz with Multidimensional Arrays
+
+  // 1. Create a multidimensional array to hold quiz questions and answers
+
+const questions = [
+  
+  ['What is the main web language?', 'HTML'],
+  ['What is the main server side language', 'Javascript'],
+  ['What year was Javascript created?', '1995']
+  
+];
+
+// 2. Store the number of questions answered correctly
+
+const correct = [];
+const incorrect = [];
+
+let correctAnswers = 0;
+
+
+/* 
+  3. Use a loop to cycle through each question
+      - Present each question to the user
+      - Compare the user's response to answer in the array
+      - If the response matches the answer, the number of correctly
+        answered questions increments by 1
+*/
+
+for (let i = 0; i < questions.length; i++) {
+  let question = questions[i][0];
+  let answer = questions[i][1];
+  let response = prompt(question);
+  
+  if (response === answer) {
+    correctAnswers++;
+    correct.push(question);
+
+  } else {
+    incorrect.push(question);
+  }
+}
+
+function createListItems(arr) {
+  let items = '';
+  for (let i = 0; i < arr.length; i++) {
+    items += `<li>${arr[i]}</li>`;
+  }
+  return items;
+}
+
+
+// 4. Display the number of correct answers to the user
+
+let html = `
+<h1>You got ${correctAnswers} question(s) correct</h1>
+<h2>You got these questions right:</h2>
+<ol>${createListItems(correct)}</ol>
+
+<h2>You got these questions wrong:</h2>
+<ol>${createListItems(incorrect)}</ol>
+`;
+
+document.querySelector('main').innerHTML = html;
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
